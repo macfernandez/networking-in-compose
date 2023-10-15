@@ -3,7 +3,8 @@
 ## About this repo
 
 Repo with an API for converting UNIX timestamps to date and time, and vice versa.
-The aim of is repo has to practice the networking between containers.
+
+The aim of this repo is to practice the networking between containers.
 
 
 ```
