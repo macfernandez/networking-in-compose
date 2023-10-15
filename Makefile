@@ -4,7 +4,7 @@ build-base:
 build-app: build-base
 	docker-compose build app
 
-build-web: build-base
+build-web: build-app
 	docker-compose build web
 
 run-app:

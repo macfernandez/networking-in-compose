@@ -15,3 +15,20 @@ services:
         - IMAGE=base:latest
     ports:
       - "8000:5000"
+    networks:
+      - web-app-network
+  web:
+    image: web:latest
+    container_name: web
+    build: 
+      context: .
+      dockerfile: ./images/web/Dockerfile
+      args:
+        - IMAGE=base:latest
+    ports:
+      - "8008:8501"
+    networks:
+      - web-app-network
+networks:
+  web-app-network:
+    driver: bridge
