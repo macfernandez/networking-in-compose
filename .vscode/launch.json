@@ -1,0 +1,15 @@
+{
+    "configurations": [
+      {
+        "name": "UNIX Converter Web",
+        "type": "python",
+        "request": "launch",
+        "module": "streamlit",
+        "args": [
+            "run",
+            "src/web/web/Home.py",
+        ],
+        "justMyCode": false
+      }
+    ]
+  }
