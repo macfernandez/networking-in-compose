@@ -1,0 +1,17 @@
+services:
+  base:
+    image: base:latest
+    container_name: base
+    build: 
+      context: .
+      dockerfile: ./images/base/Dockerfile
+  app:
+    image: app:latest
+    container_name: app
+    build: 
+      context: .
+      dockerfile: ./images/app/Dockerfile
+      args:
+        - IMAGE=base:latest
+    ports:
+      - "8000:5000"
