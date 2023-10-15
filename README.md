@@ -41,7 +41,7 @@ For running:
 make run-web
 ```
 
-## Useful links:
+## Useful links
 
 - [Docker: Networking in Compose](https://docs.docker.com/compose/networking/)
 - [FastAPI: FastAPI in Containers - Docker](https://fastapi.tiangolo.com/deployment/docker/)
