@@ -39,7 +39,7 @@ make build-web
 
 For running:
 ```
-make run-web
+make run-api
 ```
 
 ## Useful links
