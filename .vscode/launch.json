@@ -1,13 +1,24 @@
 {
     "configurations": [
       {
-        "name": "UNIX Converter Web",
+        "name": "Timestamp Converter Web",
         "type": "python",
         "request": "launch",
         "module": "streamlit",
         "args": [
             "run",
             "src/web/web/Home.py",
+        ],
+        "justMyCode": false
+      },
+      {
+        "name": "Timestamp Converter App",
+        "type": "python",
+        "request": "launch",
+        "module": "uvicorn",
+        "args": [
+            "src.app.app.__main__:app",
+            "--reload",
         ],
         "justMyCode": false
       }
