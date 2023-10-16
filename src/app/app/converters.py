@@ -16,4 +16,4 @@ def convert_binary2timestampp(binary: int) -> str:
 @router.get("/datetime2unix/{date}")
 def convert_timestamp2binary(date: str) -> str:
     date = datetime.strptime(unquote(date), "%Y-%m-%d:%H:%M:%S")
-    return int(date.strftime("%s"))
+    return date.strftime("%s")
