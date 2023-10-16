@@ -15,7 +15,7 @@ services:
         - IMAGE=base:latest
         - PORT=${BACKEND_PORT}
     ports:
-      - 8000:${BACKEND_PORT}
+      - "8000:${BACKEND_PORT}"
     networks:
       - web-app-network
   web:
