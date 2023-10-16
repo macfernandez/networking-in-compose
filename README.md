@@ -45,5 +45,6 @@ make run-web
 ## Useful links
 
 - [Docker: Networking in Compose](https://docs.docker.com/compose/networking/)
+- [Docker: Ways to set environment variables in Compose](https://docs.docker.com/compose/environment-variables/set-environment-variables/)
 - [FastAPI: FastAPI in Containers - Docker](https://fastapi.tiangolo.com/deployment/docker/)
 - [Medium: Docker Compose Network](https://medium.com/@caysever/docker-compose-network-b86e424fad82)
