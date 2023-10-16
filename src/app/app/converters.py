@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from fastapi import APIRouter
-from urllib.parse import quote 
+from urllib.parse import unquote
 
 
 router = APIRouter()
@@ -13,8 +13,7 @@ def convert_binary2timestampp(binary: int):
     timestamp = datetime.strftime(stamp, format="%a %b %d %Y %H:%M:%S")
     return timestamp
 
-@router.get("/datetime2unix/{datetime}")
-def convert_binary2timestampp(date: str):
-    # TODO: decode date
-    date = datetime.datetime.strptime(quote(datetime), "%Y-%m-%d:%H:%M:%S")
-    return date.strftime("%s")
+@router.get("/datetime2unix/{date}")
+def convert_timestamp2binary(date: str):
+    date = datetime.strptime(unquote(date), "%Y-%m-%d:%H:%M:%S")
+    return int(date.strftime("%s"))
