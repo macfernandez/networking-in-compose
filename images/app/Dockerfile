@@ -2,11 +2,12 @@ ARG IMAGE
 
 FROM ${IMAGE}
 
+ARG BACKEND_PORT
+
 COPY ./src/app /tmp/app
 
 RUN pip install --no-cache-dir /tmp/app
 
-EXPOSE 5000
-EXPOSE 8000
-
-CMD ["uvicorn", "app.__main__:app", "--host", "0.0.0.0", "--port", "5000"]
+EXPOSE ${BACKEND_PORT}
+# TODO: use BACKEND_PORT in CMD
+CMD ["uvicorn", "app.__main__:app", "--host", "0.0.0.0", "--port", "${BACKEND_PORT}"]
