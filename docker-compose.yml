@@ -13,8 +13,9 @@ services:
       dockerfile: ./images/app/Dockerfile
       args:
         - IMAGE=base:latest
+        - PORT=${BACKEND_PORT}
     ports:
-      - "8000:5000"
+      - 8000:${BACKEND_PORT}
     networks:
       - web-app-network
   web:
@@ -25,6 +26,8 @@ services:
       dockerfile: ./images/web/Dockerfile
       args:
         - IMAGE=base:latest
+    env_file:
+      - ./.env
     ports:
       - "8008:8501"
     networks:
