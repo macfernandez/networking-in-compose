@@ -3,7 +3,7 @@ import streamlit as st
 from web.converters import convert_unix2datetime, convert_datetime2unix
 
 
-def clean(*args):
+def clean(*args) -> None:
     for a in args:
         st.session_state[a] = None
 
