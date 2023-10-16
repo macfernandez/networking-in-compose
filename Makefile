@@ -12,3 +12,6 @@ run-app:
 
 run-web:
 	docker-compose up web
+
+run-api:
+	docker-compose up app web
