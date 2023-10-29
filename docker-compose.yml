@@ -16,8 +16,6 @@ services:
         - PORT=${BACKEND_PORT}
     ports:
       - "8000:${BACKEND_PORT}"
-    networks:
-      - web-app-network
   web:
     image: web:latest
     container_name: web
@@ -26,12 +24,8 @@ services:
       dockerfile: ./images/web/Dockerfile
       args:
         - IMAGE=base:latest
-    env_file:
-      - ./.env
+    environment:
+      - BACKEND_HOST=app
+      - BACKEND_PORT=${BACKEND_PORT}
     ports:
       - "8008:8501"
-    networks:
-      - web-app-network
-networks:
-  web-app-network:
-    driver: bridge
