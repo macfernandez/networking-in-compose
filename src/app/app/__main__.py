@@ -1,11 +1,27 @@
+import os
+import typer
+from typing import Optional
+
+import uvicorn
 from fastapi import FastAPI
 
 from app import converters
 
-app = FastAPI()
-app.include_router(converters.router)
+
+PORT = os.getenv("BACKEND_PORT")
+
+server_app = typer.Typer()
+
+server = FastAPI()
+server.include_router(converters.router)
 
 
-@app.get("/")
-def welcome():
-    return "Hello world."
+@server_app.command()
+def run_server(
+    host: Optional[str] = "0.0.0.0",
+    port: Optional[int] = PORT
+):
+    uvicorn.run(server, host=host, port=port)
+
+
+server_app()

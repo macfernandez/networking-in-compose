@@ -15,10 +15,10 @@
         "name": "Timestamp Converter App",
         "type": "python",
         "request": "launch",
-        "module": "uvicorn",
+        "module": "src.app.app",
         "args": [
-            "src.app.app.__main__:app",
-            "--reload",
+          "--host",
+          "127.0.0.1"
         ],
         "justMyCode": false
       }

@@ -10,8 +10,9 @@ setup(
     author="Macarena Fernández Urquiza",
     author_email="m.fernandezurquiza@gmail.com",
     install_requires=[
-        "fastapi",
-        "uvicorn"
+        "fastapi==0.104.0",
+        "typer==0.9.0",
+        "uvicorn==0.23.2"
     ],
     extras_require={},
     classifiers=[
