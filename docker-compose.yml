@@ -13,9 +13,10 @@ services:
       dockerfile: ./images/app/Dockerfile
       args:
         - IMAGE=base:latest
-        - PORT=${BACKEND_PORT}
     ports:
       - "8000:${BACKEND_PORT}"
+    environment:
+      - BACKEND_PORT=${BACKEND_PORT}
   web:
     image: web:latest
     container_name: web
