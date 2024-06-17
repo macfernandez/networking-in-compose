@@ -4,7 +4,7 @@ FROM ${IMAGE}
 
 COPY ./src/app /tmp/app
 
-RUN pip install --no-cache-dir /tmp/app
+RUN pip3 install --no-cache-dir /tmp/app
 
 EXPOSE ${BACKEND_PORT}
 

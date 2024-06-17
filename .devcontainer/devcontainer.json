@@ -1,0 +1,9 @@
+{
+    "name": "timestamp-converter",
+    "initializeCommand": "make build-base",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "timestamp-devcontainer",
+    "runServices": ["timestamp-devcontainer"],
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "./.postCreatedCommand.sh"
+}
